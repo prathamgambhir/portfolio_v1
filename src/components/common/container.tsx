@@ -1,4 +1,4 @@
-import { cn } from "@/app/lib/utils";
+import { cn } from "@/lib/utils"; // Fixed your import path if using standard shadcn/next structure
 
 const Container = ({
   children,
@@ -11,17 +11,29 @@ const Container = ({
   return (
     <div
       className={cn(
-        "mx-auto max-w-3xl px-4 relative bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[6px_6px]",
-        // border around pattern
-        "before:absolute before:top-0 before:border-y before:border-(--pattern-fg)",
-        "after:absolute after:inset-y-0 after:left-0 after:right-0 after:border-x after:border-(--pattern-fg)"
+        "mx-auto max-w-3xl px-4 relative", // min-h-screen ensures background covers the page
+        className
       )}
+      {...props}
     >
+      {/* BACKGROUND DECORATION LAYER */}
+      <div 
+        className="absolute inset-0 -z-10 pointer-events-none" 
+        aria-hidden="true"
+      >
+        {/* The Pattern Layer */}
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-[length:6px_6px] opacity-20" />
+        
+        {/* Outer Borders (Pseudo-elements from your original code) */}
+        <div className="absolute inset-0 border-x border-(--pattern-fg)" />
+        {/* <div className="absolute inset-0 border-y border-(--pattern-fg)" /> */}
+      </div>
+
+      {/* CONTENT LAYER */}
       <div
         className={cn(
-          "relative max-w-2.5xl mx-auto bg-white dark:bg-neutral-950",
-          "before:absolute before:top-0 before:border-y before:border-(--pattern-fg)",
-          "after:absolute after:inset-y-0 after:left-0 after:right-0 after:border-x after:border-(--pattern-fg)"
+          "relative z-10 max-w-2.5xl mx-auto bg-white dark:bg-neutral-950",
+          "border-x border-(--pattern-fg)" // Internal borders
         )}
       >
         {children}

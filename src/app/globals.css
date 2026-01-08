@@ -7,13 +7,32 @@
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
   --pattern-fg: var(--color-neutral-300);
+  
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono); */
+}
+
+@layer components{
+  .availability-ping{
+    @apply animate-ping absolute inset-0 rounded-full bg-green-300 opacity-75;
+  }
+  .availability-pulse {
+    @apply animate-pulse absolute rounded-full size-2 bg-green-400;
+  }
+  .button-inset{
+    @apply border border-black/20 rounded-full inset-shadow-sm inset-shadow-black/5 dark:border-white/10 dark:inset-shadow-white/10
+  }
+  .about-text-span{
+    @apply text-black font-semibold dark:text-neutral-200;
+  }
+  .about-skill-span{
+    @apply inline-flex h-6 items-center gap-1 font-semibold border border-dotted border-neutral-800 text-neutral-950 dark:border-neutral-200 px-2 rounded-md bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-100 
+  }
 }
 
 .dark {
@@ -32,5 +51,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: space-mono, sans-serif; */
 }

@@ -25,12 +25,13 @@ const routes = [
 
 const Navbar = () => {
   return (
+    // <nav className="sticky top-0 z-50 w-full">
     <Container>
       <div className="h-24 w-full sticky top-0 flex items-center justify-center px-6 z-50">
         <div
           className={cn(
             "bg-white backdrop-blur-lg h-16 w-full rounded-full border border-black/20 shadow-sm flex items-center px-4 relative",
-            "dark:bg-neutral-900 dark:border-white/5 dark:shadow-"
+            "dark:bg-neutral-900 dark:border-white/5"
           )}
         >
           <Avatar>
@@ -61,6 +62,7 @@ const Navbar = () => {
         </div>
       </div>
     </Container>
+    // </nav>
   );
 };
 
