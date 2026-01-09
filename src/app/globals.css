@@ -36,6 +36,45 @@
   .links-span{
     @apply max-h-8 border border-black/20 inset-shadow-sm inset-shadow-black/15 dark:border-white/20 dark:inset-shadow-white/15 px-3 rounded-lg
   }
+  .section-seprate{
+    @apply border-b border-dashed border-neutral-400 dark:border-neutral-500
+  }
+  .card-title {
+    /* Base: Light Mode (using neutral shades) */
+    /* Dark: Dark Mode (neutral-900/950) */
+    @apply relative inline-block px-3 py-1 text-sm font-medium text-center transition-colors duration-200;
+    @apply bg-neutral-100 text-neutral-700 border border-neutral-200 rounded-sm shadow-sm;
+    @apply dark:bg-neutral-900 dark:text-neutral-300 dark:border-neutral-800 dark:shadow-[0_4px_24px_-8px_rgba(0,0,0,0.6)];
+  }
+
+  /* Base corner class */
+  .corner {
+    @apply absolute w-2 h-2;
+  }
+
+  /* Top Left */
+  .corner-tl {
+    @apply top-0 left-0 border-t-2 border-l-2 rounded-tl-xs;
+    @apply border-neutral-400 dark:border-neutral-600;
+  }
+
+  /* Top Right */
+  .corner-tr {
+    @apply top-0 right-0 border-t-2 border-r-2 rounded-tr-xs;
+    @apply border-neutral-400 dark:border-neutral-600;
+  }
+
+  /* Bottom Left */
+  .corner-bl {
+    @apply bottom-0 left-0 border-b-2 border-l-2 rounded-bl-xs;
+    @apply border-neutral-400 dark:border-neutral-600;
+  }
+
+  /* Bottom Right */
+  .corner-br {
+    @apply bottom-0 right-0 border-b-2 border-r-2 rounded-br-xs;
+    @apply border-neutral-400 dark:border-neutral-600;
+  }
 }
 
 .dark {

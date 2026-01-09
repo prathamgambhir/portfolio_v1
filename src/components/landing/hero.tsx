@@ -3,21 +3,12 @@ import Image from "next/image";
 import ProfileImage from "../../../public/profile.jpeg";
 import { cn } from "@/lib/utils";
 import LiveClock from "./live-clock";
-import TypescriptIcon from "../Icons/typescript";
-import ReactIcon from "../Icons/react";
-import NextjsIcon from "../Icons/nextjs";
-import ExpressIcon from "../Icons/express";
-import MongoDBIcon from "../Icons/mongodb";
-import PostgresqlIcon from "../Icons/postgresql";
-import GithubIcon from "../Icons/github";
-import LinkedInIcon from "../Icons/linkedIn";
-import TwitterIcon from "../Icons/twitter-x";
-import MailIcon from "../Icons/email";
-import ResumeIcon from "../Icons/resume";
+import Link from "next/link";
+import { socialLinks } from "@/config/hero";
 
 export default function Hero() {
   return (
-    <div className="px-6 md:px-10 py-8">
+    <div className="px-6 md:px-10 py-8 section-seprate">
       {/* name and pfp */}
       <div className="flex justify-between">
         {/* name */}
@@ -79,32 +70,69 @@ export default function Hero() {
           fancy, right? But here's the actual part-- I enjoy building things
           that do something useful. From creating modern websites using{" "}
           <span className="about-skill-span">
-            <ReactIcon className="size-4 rounded-3xl" />
+            <Image
+              src={`/icons/react.svg`}
+              alt={`react`}
+              width={20}
+              height={20}
+              className="size-4"
+            />
             React
           </span>
           ,{" "}
           <span className="about-skill-span">
-            <NextjsIcon className="size-4 rounded-3xl dark:bg-white" />
+            <Image
+              src={`/icons/nextjs.svg`}
+              alt={`nextjs`}
+              width={20}
+              height={20}
+              className="size-4 dark:bg-white dark:rounded-md"
+            />
             NextJs
           </span>
           ,{" "}
           <span className="about-skill-span">
-            <ExpressIcon className="size-4 rounded-3xl dark:bg-white" />
+            <Image
+              src={`/icons/express.svg`}
+              alt={`express`}
+              width={20}
+              height={20}
+              className="size-4 dark:bg-white dark:rounded-md"
+            />
             Express
           </span>
           &nbsp;and&nbsp;
           <span className="about-skill-span">
-            <TypescriptIcon className="size-4 rounded-3xl" />
+            <Image
+              src={`/icons/typescript.svg`}
+              alt={`typescript`}
+              width={20}
+              height={20}
+              className="size-4"
+            />
+            {/* <TypescriptIcon className="size-4 rounded-3xl" /> */}
             Typescript
           </span>{" "}
           backed by{" "}
           <span className="about-skill-span">
-            <MongoDBIcon className="size-4 rounded-3xl" />
+            <Image
+              src={`/icons/mongodb.svg`}
+              alt={`mongodb`}
+              width={20}
+              height={20}
+              className="size-4"
+            />
             MongoDB
           </span>
           &nbsp;and&nbsp;
           <span className="about-skill-span">
-            <PostgresqlIcon className="size-4 rounded-3xl" />
+            <Image
+              src={`/icons/postgresql.svg`}
+              alt={`postgresql`}
+              width={20}
+              height={20}
+              className="size-4"
+            />
             Postgresql
           </span>{" "}
           to shaping clean APIs or polishing FrontEnd interactions.I enjoy
@@ -114,13 +142,37 @@ export default function Hero() {
       </div>
       {/* Links */}
       <div className="flex items-center gap-2 text-sm/relaxed w-full pt-6">
-        <div className="links-span flex items-center gap-2 py-2"><TwitterIcon className="size-3"/>DM</div>
-        <span>OR</span>
-        <div  className="links-span flex items-center gap-2 py-2"><MailIcon className="size-4"/>Email Me</div>
-        <span>|</span>
-        <div className="links-span flex items-center gap-1 py-2"><GithubIcon className="size-4"/></div>
-        <div className="links-span flex items-center gap-1 py-2"><LinkedInIcon className="size-4"/></div>
-        <div className="links-span flex items-center gap-1 py-2"><ResumeIcon className="size-4"/></div>
+        {socialLinks.map((link, index) => {
+          return (
+            <div key={index} className="flex items-center gap-2">
+              {/* Render the Link */}
+              <Link
+                href={link.href}
+                className="links-span flex items-center gap-2 py-2 hover:opacity-70 transition-opacity"
+              >
+                <Image
+                  src={`/icons/${link.icon}`}
+                  alt={`${index}`}
+                  width={20}
+                  height={20}
+                  className={cn("size-4.5 dark:bg-neutral-100 dark:rounded-sm", index === 0? "size-3.5" : "")}
+                />
+                {link.label && <span>{link.label}</span>}
+              </Link>
+
+              {/* Logic for Separators */}
+              {/* Show "OR" after the first item only */}
+              {index === 0 && (
+                <span className="text-muted-foreground mx-1">OR</span>
+              )}
+
+              {/* Show "|" after the second item only */}
+              {index === 1 && (
+                <span className="text-muted-foreground mx-1">|</span>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
