@@ -52,7 +52,7 @@ export default function Hero() {
           </button>
         </div>
         {/* pfp */}
-        <div className="border border-black h-24 w-auto shadow-md rounded-3xl dark:border-neutral-200 dark:shadow-neutral-700">
+        <div className="border border-black h-24 md:h-32 w-auto shadow-md rounded-3xl dark:border-neutral-200 dark:shadow-neutral-700">
           <Image
             src={ProfileImage}
             alt="pfp"

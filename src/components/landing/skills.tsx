@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function Skills() {
   return (
-    <div className="px-4 py-10 section-seprate">
+    <div className="px-4 py-7 pb-10 section-seprate flex flex-col ">
       {/* tech stack */}
-      <div className="pb-6">
+      <div className="pb-10 flex ">
         <h2 className="card-title ">
           <div className="corner corner-tl"></div>{" "}
           <div className="corner corner-tr"></div>{" "}
@@ -20,7 +20,7 @@ export default function Skills() {
           return (
             <div
               key={idx}
-              className="about-skill-span h-7 font-medium text-sm flex items-center gap-1"
+              className="about-skill-span h-9 md:h-7.5 font-medium text-sm flex items-center gap-2"
             >
               <span>
                 <Image
