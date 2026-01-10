@@ -10,7 +10,7 @@ export default function GithubActivity() {
   return (
     <div className="px-4 py-7 pb-10 section-seprate flex flex-col">
       <DottedTitle>GitHub Activity</DottedTitle>
-      <div className="w-full px-2 border border-neutral-200 dark:border-neutral-800 rounded-md py-1 tracking-tighter text-xs font-light">
+      <div className="w-full bg-neutral-100/25 dark:bg-neutral-900/40 px-2 border border-neutral-200 dark:border-neutral-800 rounded-md py-1 tracking-tighter text-xs font-light">
         <GitHubCalendar
           username="prathamgambhir"
           year={date.getFullYear()}

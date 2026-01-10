@@ -1,4 +1,5 @@
 import Container from "@/components/common/container";
+import Blogs from "@/components/landing/blogs";
 import Education from "@/components/landing/education";
 import GithubActivity from "@/components/landing/github-activity";
 import Hero from "@/components/landing/hero";
@@ -13,6 +14,7 @@ export default function Home() {
       <Education />
       <Projects />
       <GithubActivity />
+      <Blogs />
     </Container>
   );
 }
