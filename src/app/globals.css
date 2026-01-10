@@ -87,6 +87,30 @@
   --pattern-fg: var(--color-neutral-700);
 }
 
+.react-activity-calendar__tooltip {
+  width: max-content;
+  z-index: 50;
+  max-width: calc(100vw - 20px);
+  padding: 0.2em 0.5em;
+  border-radius: 0.25em;
+  border: 1px solid rgb(221, 221, 221);
+  background-color: whitesmoke;
+  color: black;
+  font-size: 10px;
+  letter-spacing: -0.05em;
+
+  /* Use this instead of a media query - the component theme can be set */
+  /* independent of the system color scheme. */
+  &[data-color-scheme='dark'] {
+    background-color: hsl(0 0% 94%);
+    color: hsl(0 0% 6%);
+
+    .react-activity-calendar__tooltip-arrow {
+      fill: hsl(0 0% 94%);
+    }
+  }
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
