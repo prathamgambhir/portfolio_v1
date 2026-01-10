@@ -22,10 +22,12 @@ const Container = ({
         aria-hidden="true"
       >
         {/* The Pattern Layer */}
-        <div className="absolute inset-0 bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-[length:6px_6px] opacity-20" />
+        <div className={cn("absolute inset-0 bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[6px_6px] opacity-20",
+          "dark:bg-[repeating-linear-gradient(315deg,var(--pattern-fg-dark)_0,var(--pattern-fg-dark)_1px,transparent_0,transparent_50%)]"
+        )} />
         
         {/* Outer Borders (Pseudo-elements from your original code) */}
-        <div className="absolute inset-0 border-x border-(--pattern-fg)" />
+        <div className="absolute inset-0 border-x border-(--pattern-fg)/70" />
         {/* <div className="absolute inset-0 border-y border-(--pattern-fg)" /> */}
       </div>
 
@@ -33,7 +35,7 @@ const Container = ({
       <div
         className={cn(
           "relative z-10 max-w-2.5xl mx-auto bg-white dark:bg-neutral-950",
-          "border-x border-(--pattern-fg)" // Internal borders
+          "border-x border-(--pattern-fg)/70" // Internal borders
         )}
       >
         {children}

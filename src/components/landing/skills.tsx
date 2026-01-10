@@ -1,19 +1,12 @@
 import { skills } from "@/config/technologies";
 import Image from "next/image";
+import DottedTitle from "../common/dotted-tittle";
 
 export default function Skills() {
   return (
     <div className="px-4 py-7 pb-10 section-seprate flex flex-col ">
       {/* tech stack */}
-      <div className="pb-10 flex ">
-        <h2 className="card-title ">
-          <div className="corner corner-tl"></div>{" "}
-          <div className="corner corner-tr"></div>{" "}
-          <div className="corner corner-bl"></div>{" "}
-          <div className="corner corner-br"></div>
-          Tools & Technologies I Use
-        </h2>
-      </div>
+      <DottedTitle>Tools & Technologies I Use</DottedTitle>
       {/*Tech Icons*/}
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, idx) => {

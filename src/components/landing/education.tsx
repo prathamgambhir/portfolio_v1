@@ -1,18 +1,11 @@
 import { educationData } from "@/config/education";
 import Image from "next/image";
+import DottedTitle from "../common/dotted-tittle";
 
 export default function Education() {
   return (
     <div className="px-4 py-7 pb-10 section-seprate">
-      <div className="pb-10 flex ">
-        <h2 className="card-title ">
-          <div className="corner corner-tl"></div>{" "}
-          <div className="corner corner-tr"></div>{" "}
-          <div className="corner corner-bl"></div>{" "}
-          <div className="corner corner-br"></div>
-          Education
-        </h2>
-      </div>
+      <DottedTitle>Education</DottedTitle>
       <div className="flex flex-col gap-8">
         {educationData.map((edu, index) => (
           <div key={index} className="flex items-start justify-between group">
