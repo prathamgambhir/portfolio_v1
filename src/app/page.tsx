@@ -9,13 +9,13 @@ import Experience from "@/components/landing/experience";
 export default function Home() {
   return (
     <>
-      <Container className="min-h-screen mask-t-from-98% mask-b-from-98%">
+      <Container className="min-h-screen mask-t-from-98%">
         <Hero />
         <Skills />
-        <Education />
+        <Experience />
         <Projects />
         <GithubActivity />
-        <Experience />
+        <Education />
       </Container>
     </>
   );

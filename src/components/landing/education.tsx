@@ -17,7 +17,7 @@ export default function Education() {
                   alt={edu.institution}
                   width={40}
                   height={40}
-                  className="object-contain"
+                  className="object-contain rounded-lg"
                 />
               </div>
 
