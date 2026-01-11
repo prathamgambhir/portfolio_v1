@@ -6,7 +6,7 @@ export default function Footer() {
     <Container>
       <footer className="px-6 md:px-10 py-20 flex flex-col items-center justify-evenly gap-20  md:gap-28">
         {/* Geeta quote */}
-        <div className="relative max-w-2xl w-full mx-auto border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/30 rounded-3xl px-8 py-6 md:px-12 md:py-9 overflow-hidden">
+        <div className="relative max-w-2xl w-full mx-auto border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/30 rounded-3xl px-6 py-5 md:px-9 md:py-7 overflow-hidden">
           <span className="absolute top-1 md:top-2 left-2  text-neutral-200 dark:text-neutral-800 select-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -20,8 +20,8 @@ export default function Footer() {
             </svg>
           </span>
           <div className="relative z-10 selection:bg-neutral-300 flex flex-col gap-4 tracking-tight">
-            <div className="text-neutral-800 dark:text-neutral-400 italic text-md md:text-lg text-center md:leading-relaxed font-medium">
-              "Man is made by his belief. As he believes, so he is."
+            <div className="text-neutral-800 dark:text-neutral-400 italic text-sm md:text-lg text-center md:leading-relaxed font-medium">
+              "Man is made by his belief. As he believes,<br /> so he is."
             </div>
             <div className="text-neutral-500 dark:text-neutral-500 text-right font-medium text-sm md:text-md">
               — Bhagavad Gita
