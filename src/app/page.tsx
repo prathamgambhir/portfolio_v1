@@ -6,6 +6,7 @@ import Projects from "@/components/landing/projects";
 import Skills from "@/components/landing/skills";
 import Experience from "@/components/landing/experience";
 import Contact from "@/components/landing/contact";
+import Blogs from "@/components/landing/blogs";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <GithubActivity />
+        <Blogs />
         <Education />
         <Contact />
       </Container>
