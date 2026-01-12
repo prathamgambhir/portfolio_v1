@@ -3,8 +3,8 @@ import Container from "./container";
 
 export default function Footer() {
   return (
-    <Container>
-      <footer className="px-6 md:px-10 py-20 flex flex-col items-center justify-evenly gap-20  md:gap-28">
+    <Container className="mask-b-from-98%">
+      <footer className="px-6 md:px-10 py-20 flex flex-col items-center justify-evenly gap-20  md:gap-28 section-seprate">
         {/* Geeta quote */}
         <div className="relative max-w-2xl w-full mx-auto border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/30 rounded-3xl px-6 py-5 md:px-9 md:py-7 overflow-hidden">
           <span className="absolute top-1 md:top-2 left-2  text-neutral-200 dark:text-neutral-800 select-none">
@@ -36,7 +36,7 @@ export default function Footer() {
             <div className="text-sm md:text-base text-neutral-600 dark:text-neutral-400 font-medium">
               You are the{" "}
               <span className="text-neutral-900 dark:text-neutral-100 font-bold tabular-nums">
-                27,056th
+                {Math.floor(Math.random() * 1000)}<sup>th</sup>
               </span>{" "}
               visitor
             </div>

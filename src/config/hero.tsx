@@ -1,10 +1,3 @@
-import MailIcon from "@/components/Icons/email";
-import GithubIcon from "@/components/Icons/github";
-import LinkedInIcon from "@/components/Icons/linkedIn";
-import ResumeIcon from "@/components/Icons/resume";
-import TwitterIcon from "@/components/Icons/twitter-x";
-import React from "react";
-
 export const socialLinks: {
   href: string;
   label?: string;

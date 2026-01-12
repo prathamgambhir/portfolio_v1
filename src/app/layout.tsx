@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
+import { Space_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/common/theme-provider";
 import Navbar from "@/components/common/navbar";
@@ -14,6 +14,13 @@ import Footer from "@/components/common/footer";
 //   variable: "--font-geist-mono",
 //   subsets: ["latin"],
 // });
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap', // 'swap' ensures text is visible while the font loads
+  weight: ['400', '700'], // Specify the weights you need
+  variable: '--font-poppins', // Define a CSS variable for Tailwind or CSS modules
+})
 
 const spaceMono = Space_Mono({
   subsets: ['latin'],
@@ -33,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={spaceMono.className}>
+    <html lang="en" suppressHydrationWarning className={`${poppins.variable} ${spaceMono.className}`}>
       <body
         className={`antialiased`} //${geistSans.variable} ${geistMono.variable} 
       >
