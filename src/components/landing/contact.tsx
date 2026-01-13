@@ -2,37 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Calendar } from "lucide-react";
-import { motion } from "motion/react";
 import MotionDiv from "../motion-div";
+import { containerVariants, itemVariants } from "@/lib/stagger-animate";
 
 export default function Contact() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.05,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 20, 
-      filter: "blur(10px)" 
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.3, // Slower duration for "smoothness"
-      },
-    },
-  };
-
   return (
     <MotionDiv 
       className="section-seprate font-poppins px-6 py-20"

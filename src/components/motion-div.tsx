@@ -20,4 +20,20 @@ export const MotionDiv: React.FC<MotionDivWrapperProps> = ({
   );
 };
 
+// interface MotionSpanWrapperProps extends MotionProps {
+//   children: React.ReactNode;
+//   className?: string; // Optional className for styling
+// }
+// export const MotionSpan: React.FC<MotionSpanWrapperProps> = ({
+//   children,
+//   className,
+//   ...props
+// }) => {
+//   return (
+//     <motion.span className={className} {...props}>
+//       {children}
+//     </motion.span>
+//   );
+// };
+
 export default MotionDiv;
