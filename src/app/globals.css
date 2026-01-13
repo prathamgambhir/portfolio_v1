@@ -80,6 +80,18 @@
     @apply bottom-0 right-0 border-b-2 border-r-2 rounded-br-xs;
     @apply border-neutral-400 dark:border-neutral-600;
   }
+
+  .contact-form-div{
+    @apply flex flex-col gap-2 justify-start
+  }
+  
+  .contact-form-label{
+    @apply text-sm font-medium text-neutral-800 dark:text-neutral-100 px-1 after:content-[":"]
+  }
+
+  .contact-form-input{
+    @apply text-sm border border-neutral-300 px-2 rounded-md h-10 focus:ring focus:ring-neutral-300 outline-none
+  }
 }
 
 .dark {
