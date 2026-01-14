@@ -10,7 +10,7 @@ import { ContactFormSchema } from "@/schema/contact-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "motion/react";
 
-export default function ContactCard() {
+export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const {
     register,
@@ -124,6 +124,7 @@ export default function ContactCard() {
           className="w-full cursor-pointer rounded-xl border border-neutral-300 bg-white/50 px-4 py-2.5 transition-all outline-none focus:border-neutral-900 focus:ring-4 focus:ring-neutral-900/5 dark:border-neutral-700 dark:bg-neutral-800/50 dark:focus:border-neutral-100 dark:focus:ring-neutral-100/5"
         >
           <option value="Web Development">Web Development</option>
+          <option value="Hire Me">Hire me</option>
           <option value="other">Other</option>
         </select>
         {errors.service && (

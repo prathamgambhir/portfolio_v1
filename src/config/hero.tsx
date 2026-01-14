@@ -5,13 +5,13 @@ export const socialLinks: {
   type: "primary" | "social";
 }[] = [
   {
-    href: "https://x.com/i/chat/1927575890667372544",
+    href: "https://x.com/_PrathamGambhir",
     label: "DM",
     icon: "x.svg",
     type: "primary",
   },
   {
-    href: "mailto:prathamgambhir29@gmail.com",
+    href: "/contact",
     label: "Email Me",
     icon: "mail.svg",
     type: "primary",

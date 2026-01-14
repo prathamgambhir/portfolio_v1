@@ -1,4 +1,4 @@
-import ContactCard from "@/components/contact/contact-form";
+import ContactForm from "@/components/contact/contact-form";
 import MotionDiv from "@/components/motion-div";
 import { containerVariants, itemVariants } from "@/lib/stagger-animate";
 
@@ -6,8 +6,8 @@ export default function Contact() {
   return (
     <MotionDiv
       variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
+      initial="initial"
+      whileInView="animate"
       viewport={{ once: true, margin: "-100px" }}
       className="section-seprate flex flex-col px-4 py-7 pb-10"
     >
@@ -30,7 +30,7 @@ export default function Contact() {
       </div>
       {/* <MotionDiv variants={containerVariants} className="flex justify-center p-3"> */}
       <div className="flex justify-center p-3">
-        <ContactCard />
+        <ContactForm />
       </div>
       {/* </MotionDiv> */}
     </MotionDiv>
