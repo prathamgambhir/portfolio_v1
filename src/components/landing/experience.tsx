@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 import { experienceData } from "@/config/experience";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import MotionDiv from "../motion-div";
+import {MotionDiv} from "../motion-div";
 
 export default function Experience() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);

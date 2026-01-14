@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Calendar } from "lucide-react";
-import MotionDiv from "../motion-div";
+import {MotionDiv} from "../motion-div";
 import { containerVariants, itemVariants } from "@/lib/stagger-animate";
 
 export default function Contact() {

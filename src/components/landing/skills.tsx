@@ -3,7 +3,7 @@
 import { skills } from "@/config/technologies";
 import Image from "next/image";
 import DottedTitle from "../common/dotted-tittle";
-import MotionDiv from "../motion-div";
+import {MotionDiv} from "../motion-div";
 
 export default function Skills() {
   // Container variant for staggering the initial load

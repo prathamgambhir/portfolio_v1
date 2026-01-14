@@ -1,44 +1,63 @@
 import { educationData } from "@/config/education";
 import Image from "next/image";
 import DottedTitle from "../common/dotted-tittle";
+import { containerVariants, itemVariants } from "@/lib/stagger-animate";
+import {MotionDiv} from "../motion-div";
 
 export default function Education() {
   return (
-    <div className="px-4 py-7 pb-10 section-seprate">
+    <MotionDiv
+      variants={containerVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, margin: "-100px" }}
+      className="section-seprate px-4 py-7 pb-10"
+    >
       <DottedTitle>Education</DottedTitle>
-      <div className="flex flex-col gap-8">
+
+      <div className="flex flex-col gap-2">
         {educationData.map((edu, index) => (
-          <div key={index} className="flex items-start justify-between group">
-            <div className="flex items-center gap-4">
-              {/* logo */}
-              <div className="relative w-14 h-14 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 flex items-center justify-center overflow-hidden shadow-sm">
+          <MotionDiv
+            key={index}
+            variants={itemVariants}
+            whileHover={{ y: -5 }} // Subtle slide on hover
+            className="group flex items-center justify-between rounded-2xl p-3 transition-colors hover:bg-neutral-50 md:mx-0 dark:hover:bg-neutral-900/50"
+          >
+            <div className="flex items-center gap-5">
+              {/* Logo with individual animation */}
+              <MotionDiv
+                whileHover={{ rotate: -5, scale: 1.1 }}
+                className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-shadow group-hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+              >
                 <Image
-                  src={`icons/${edu.logo}`}
+                  src={`/icons/${edu.logo}`}
                   alt={edu.institution}
                   width={40}
                   height={40}
-                  className="object-contain rounded-lg"
+                  className="object-cover p-2"
                 />
-              </div>
+              </MotionDiv>
 
               {/* Institute and degree */}
               <div className="flex flex-col">
-                <h3 className="text-base font-medium leading-tight text-neutral-700 dark:text-neutral-200 group-hover:text-neutral-600 dark:group-hover:text-neutral-400 transition-colors">
+                <h3 className="text-[15px] leading-tight font-semibold text-neutral-800 transition-colors dark:text-neutral-200">
                   {edu.institution}
                 </h3>
-                <p className="text-neutral-500 dark:text-neutral-400 text-xs mt-1">
+                <p className="mt-1 text-xs font-medium text-neutral-500 dark:text-neutral-400">
                   {edu.degree}
                 </p>
               </div>
             </div>
 
             {/* duration */}
-            <div className="text-neutral-400 dark:text-neutral-500 text-sm font-medium pt-2.5 tabular-nums">
-              {edu.duration}
+            <div className="text-right hidden sm:block mb-2">
+              <span className="rounded-full border border-neutral-200 px-3 py-1 text-[11px] font-bold tracking-wider text-neutral-400 uppercase dark:border-neutral-800 dark:text-neutral-500">
+                {edu.duration}
+              </span>
             </div>
-          </div>
+          </MotionDiv>
         ))}
       </div>
-    </div>
+    </MotionDiv>
   );
 }

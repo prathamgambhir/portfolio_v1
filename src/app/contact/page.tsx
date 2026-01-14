@@ -1,5 +1,5 @@
 import ContactForm from "@/components/contact/contact-form";
-import MotionDiv from "@/components/motion-div";
+import {MotionDiv} from "@/components/motion-div";
 import { containerVariants, itemVariants } from "@/lib/stagger-animate";
 
 export default function Contact() {

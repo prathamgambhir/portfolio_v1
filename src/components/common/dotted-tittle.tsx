@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import MotionDiv from "../motion-div";
+import {MotionDiv} from "../motion-div";
 import { easeInOut } from "motion/react";
 
 export default function DottedTitle({

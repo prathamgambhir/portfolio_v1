@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import LiveClock from "./live-clock";
 import Link from "next/link";
 import { socialLinks } from "@/config/hero";
-import MotionDiv from "../motion-div";
+import {MotionDiv} from "../motion-div";
 import { containerVariants, itemVariants } from "@/lib/stagger-animate";
 
 export default function Hero() {
