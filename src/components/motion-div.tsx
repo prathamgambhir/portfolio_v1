@@ -4,7 +4,7 @@ import { motion, MotionProps } from "motion/react";
 import React from "react";
 
 // Define the props, including children and any motion properties
-interface MotionDivWrapperProps extends MotionProps {
+interface MotionDivWrapperProps extends MotionProps{
   children: React.ReactNode;
   className?: string; // Optional className for styling
 }
