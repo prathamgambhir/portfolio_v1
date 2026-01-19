@@ -34,7 +34,7 @@ export default function Education() {
                   alt={edu.institution}
                   width={40}
                   height={40}
-                  className="object-cover p-2"
+                  className="size-12 object-cover p-2 rounded-xl"
                 />
               </MotionDiv>
 

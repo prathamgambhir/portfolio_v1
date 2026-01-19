@@ -1,5 +1,4 @@
 import Image from "next/image";
-import DottedTitle from "../common/dotted-tittle";
 import Link from "next/link";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
 import GreenPing from "../common/green-ping";
@@ -10,7 +9,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-import { projects } from "@/config/projects";
+import { MotionDiv } from "../motion-div";
+import { containerVariants, itemVariants } from "@/lib/stagger-animate";
 
 export default function ProjectCard({
   projects,
@@ -24,91 +24,120 @@ export default function ProjectCard({
     live: string;
   }[];
 }) {
-    return (
-        <div className="flex flex-wrap gap-6">
-        {/* projects box - Set to w-full md:w-[48%] for a nice 2-column grid later */}
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(50%-12px)] p-3 border border-neutral-200 dark:border-neutral-800 rounded-2xl flex flex-col gap-4 bg-white dark:bg-neutral-900/50"
-          >
-            <div className="relative aspect-video overflow-hidden rounded-xl">
+  return (
+    <MotionDiv
+      variants={containerVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, margin: "-100px" }}
+      className="flex flex-wrap gap-6"
+    >
+      {projects.map((project, index) => (
+        <MotionDiv
+          key={index}
+          variants={itemVariants}
+          whileHover={{ y: -5, transition: { duration: 0.2 } }}
+          className="group flex w-full flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-3 md:w-[calc(50%-12px)] dark:border-neutral-800 dark:bg-neutral-900/50 shadow-sm transition-shadow hover:shadow-md"
+        >
+          {/* Image Section with Zoom on Hover */}
+          <div className="relative aspect-video overflow-hidden rounded-xl">
+            <MotionDiv
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.4 }}
+              className="h-full w-full"
+            >
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
                 className="object-cover"
               />
-            </div>
+            </MotionDiv>
+          </div>
 
-            {/* project name and links */}
-            <div className="flex items-center justify-between mt-1">
-              <h2 className="text-lf tracking-tighter font-medium text-neutral-800 dark:text-neutral-100">
-                {project.title}
-              </h2>
-              <div className="flex gap-1">
-                <Link href={project.live}>
-                  <div className="about-skill-span text-xs tracking-tighter font-medium flex items-center gap-1">
-                    <ArrowUpRightFromSquareIcon className="size-3" />
-                    <span>Live</span>
-                  </div>
-                </Link>
-                <Link href={project.github}>
-                  <div className="about-skill-span text-xs tracking-tighter font-medium flex items-center gap-1">
-                    <Image
-                      src="/icons/github.svg"
-                      alt="Github"
-                      width={20}
-                      height={20}
-                      className="size-3 dark:bg-neutral-100 rounded-2xl"
-                    />
-                    <span>Github</span>
-                  </div>
-                </Link>
-              </div>
+          {/* Project Name and Links */}
+          <div className="mt-1 flex items-center justify-between">
+            <h2 className="text-lg font-bold tracking-tighter text-neutral-800 dark:text-neutral-100">
+              {project.title}
+            </h2>
+            <div className="flex gap-1">
+              <Link href={project.live} target="_blank">
+                <div className="about-skill-span flex items-center gap-1 text-xs font-medium tracking-tighter transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800">
+                  <ArrowUpRightFromSquareIcon className="size-3" />
+                  <span>Live</span>
+                </div>
+              </Link>
+              <Link href={project.github} target="_blank">
+                <div className="about-skill-span flex items-center gap-1 text-xs font-medium tracking-tighter transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800">
+                  <Image
+                    src="/icons/github.svg"
+                    alt="Github"
+                    width={20}
+                    height={20}
+                    className="size-3 rounded-2xl dark:bg-neutral-100"
+                  />
+                  <span>Github</span>
+                </div>
+              </Link>
             </div>
+          </div>
 
-            {/* project description */}
-            <div className="text-neutral-500 dark:text-neutral-400 text-sm tracking-tighter mt-1 leading-relaxed line-clamp-2">
-              {project.description}
-            </div>
+          {/* Project Description */}
+          <div className="line-clamp-2 text-sm leading-relaxed tracking-tighter text-neutral-500 dark:text-neutral-400">
+            {project.description}
+          </div>
 
-            {/* tech stack */}
-            <div className="flex flex-col gap-2">
-              <span className="text-[10px] uppercase tracking-wider font-bold text-neutral-400 dark:text-neutral-500">
-                Technologies Used
-              </span>
-              <div className="flex flex-wrap gap-2 ">
-                {project.techstack.map((tech, index) => (
-                  <TooltipProvider delayDuration={100} key={index}>
+          {/* Tech Stack - Stagged Animation Applied Here */}
+          <div className="flex flex-col gap-2">
+            <span className="text-[10px] font-bold tracking-wider text-neutral-400 uppercase dark:text-neutral-500">
+              Technologies Used
+            </span>
+            <MotionDiv
+              variants={containerVariants} // Re-using container variants for internal stagger
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, margin: "-20px" }}
+              className="flex flex-wrap gap-2"
+            >
+              {project.techstack.map((tech, techIdx) => (
+                <MotionDiv 
+                  key={techIdx} 
+                  variants={itemVariants} // Re-using item variants for each icon
+                  whileHover={{ y: -3, scale: 1.1 }}
+                >
+                  <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Avatar className="size-7 cursor-pointer border border-neutral-200 dark:bg-neutral-50">
-                          <AvatarImage src={`/icons/${tech.icon}`} alt={tech.name}/>
+                        <Avatar className="size-7 cursor-pointer border border-neutral-200 bg-white dark:bg-neutral-50 transition-transform active:scale-90">
+                          <AvatarImage
+                            src={`/icons/${tech.icon}`}
+                            alt={tech.name}
+                            className="p-1" // Added padding to show avatar background
+                          />
                         </Avatar>
                       </TooltipTrigger>
                       <TooltipContent
                         side="top"
                         align="center"
-                        className="bg-neutral-50 text-neutral-600 px-3 py-1.5 text-xs font-medium rounded-lg border-none shadow-xl"
+                        className="rounded-lg border-none bg-neutral-900 px-3 py-1.5 mb-1 text-xs font-medium text-white shadow-xl dark:bg-neutral-100 dark:text-neutral-900"
                       >
-                        <span>
-                          {tech.name}
-                        </span>
+                        <span>{tech.name}</span>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-                ))}
-              </div>
-            </div>
-
-            {/* all systems working badge */}
-            <div className="mt-2 flex items-center gap-2 text-[11px] font-medium green-bg">
-              <GreenPing />
-              All Systems Working
-            </div>
+                </MotionDiv>
+              ))}
+            </MotionDiv>
           </div>
-        ))}
-      </div>
-    )
+
+          {/* Badge */}
+          <div className="green-bg mt-auto flex items-center gap-2 text-[11px] font-medium self-start">
+            <GreenPing />
+            All Systems Working
+          </div>
+        </MotionDiv>
+      ))}
+    </MotionDiv>
+  );
 }
