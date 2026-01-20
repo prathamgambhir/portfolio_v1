@@ -92,6 +92,10 @@
   .contact-form-input{
     @apply text-sm border border-neutral-300 px-2 rounded-md h-10 focus:ring focus:ring-neutral-300 outline-none
   }
+
+  .zinc-box{
+    @apply rounded-md border border-neutral-100 shadow-sm dark:border-neutral-800 bg-zinc-50/50 p-5 dark:bg-zinc-900/50
+  }
 }
 
 .dark {
