@@ -3,7 +3,9 @@
 import { Project } from "@/types/project";
 import { PlayCircleIcon, XIcon } from "lucide-react";
 import Image from "next/image";
+import { motion } from "motion/react";
 import { useState, useEffect } from "react";
+import { containerVariants, itemVariants } from "@/lib/stagger-animate";
 
 export default function ProjectVideo({ project }: { project: Project }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +22,9 @@ export default function ProjectVideo({ project }: { project: Project }) {
   return (
     <>
       {/* Thumbnail Container */}
-      <div
-        className="bg-muted group relative mb-12 flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-zinc-200 shadow-2xl transition-all hover:border-zinc-400 dark:border-zinc-800"
+      <motion.div
+        variants={containerVariants}
+        className="group relative mb-12 flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-zinc-200 shadow-md transition-all hover:border-zinc-400 dark:border-zinc-800"
         onClick={() => setIsOpen(true)}
       >
         {project.image && (
@@ -35,15 +38,18 @@ export default function ProjectVideo({ project }: { project: Project }) {
         )}
 
         {/* Play Button Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors group-hover:bg-black/30">
-          <PlayCircleIcon className="size-20 text-white opacity-80 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100" />
+        <div className="absolute inset-0 flex items-center justify-center transition-colors group-hover:bg-black/30">
+          <PlayCircleIcon className="size-20 text-white opacity-80 bg-black/30 rounded-full transition-all duration-300 group-hover:scale-110 group-hover:opacity-100" />
         </div>
-      </div>
+      </motion.div>
 
       {/* Video blur bg */}
       {isOpen && (
-        <div
-          className="animate-in fade-in fixed inset-0 z-50 mx-auto flex h-auto max-w-3xl items-center justify-center bg-white/70 p-4 backdrop-blur-sm duration-300 dark:bg-neutral-900/70"
+        <motion.div
+          animate={{ opacity: 1, filter: "blur(2px)", scale: 1.05 }}
+          exit={{ opacity: 0, filter: "blur(0px)", scale: 0.95 }}
+          transition={{ duration: 300, ease: "easeInOut" }}
+          className="fixed inset-0 z-50 mx-auto flex h-auto max-w-3xl items-center justify-center bg-white/70 p-4 backdrop-blur-sm dark:bg-neutral-900/70"
           onClick={() => setIsOpen(false)} // Closes when clicking the backdrop
         >
           {/* stopPropagation prevents closing when clicking the video itself */}
@@ -67,7 +73,7 @@ export default function ProjectVideo({ project }: { project: Project }) {
               <XIcon className="size-8 rounded-full bg-black p-2" />
             </button>
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );

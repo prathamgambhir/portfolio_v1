@@ -98,6 +98,25 @@
   }
 }
 
+@theme{
+  
+  @keyframes fadeInUpBlur {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+      filter: blur(0px);
+    }
+  }
+  
+  --animate-item-in : fadeInUpBlur 0.5s ease-out forwards;
+
+}
+
 .dark {
   --background: var(--color-neutral-950);
   --foreground: var(--color-neutral-50);

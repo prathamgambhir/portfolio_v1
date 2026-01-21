@@ -5,6 +5,8 @@ import rehypeHighlight from "@shikijs/rehype"; // Ensure you have this installed
 import { ArrowUpRightFromSquare, PlayCircleIcon } from "lucide-react";
 import { Project } from "@/types/project";
 import ProjectVideo from "./project-video";
+import { MotionDiv } from "../motion-div";
+import { containerVariants, itemVariants } from "@/lib/stagger-animate";
 
 interface PageProps {
   project: Project;
@@ -13,7 +15,13 @@ interface PageProps {
 export default function ProjectContent({ project }: PageProps) {
   return (
     <>
-      <div className="font-poppins mx-auto max-w-4xl px-6 py-12">
+      <MotionDiv
+        variants={containerVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, margin: "-100px" }}
+        className="font-poppins mx-auto max-w-4xl px-6 py-12"
+      >
         {/* 1. VIDEO */}
         <div>
           <ProjectVideo project={project} />
@@ -21,7 +29,7 @@ export default function ProjectContent({ project }: PageProps) {
 
         {/* 2. BADGES & TITLE */}
         <div className="mb-6 space-y-4">
-          <div className="flex flex-wrap gap-2">
+          <MotionDiv variants={itemVariants} className="flex flex-wrap gap-2">
             <span className="rounded-md border border-green-300 bg-green-100 px-2.5 py-0.5 text-xs font-semibold uppercase dark:border-green-700 dark:bg-green-900">
               {project.status}
             </span>
@@ -38,15 +46,15 @@ export default function ProjectContent({ project }: PageProps) {
                 +{project.teachnologies!.length - 4} more
               </span>
             )}
-          </div>
+          </MotionDiv>
 
-          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+          <MotionDiv variants={itemVariants} className="text-4xl font-bold tracking-tight lg:text-5xl">
             {project.title}
-          </h1>
+          </MotionDiv>
         </div>
 
         {/* 3. METADATA GRID */}
-        <div className="zinc-box mb-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <MotionDiv variants={itemVariants} className="zinc-box mb-8 grid grid-cols-2 gap-4 md:grid-cols-4">
           <div>
             <h4 className="text-muted-foreground text-xs font-bold uppercase">
               Timeline
@@ -71,10 +79,10 @@ export default function ProjectContent({ project }: PageProps) {
             </h4>
             <p className="text-sm font-medium capitalize">{project.status}</p>
           </div>
-        </div>
+        </MotionDiv>
 
         {/* 4. ACTION BUTTONS */}
-        <div className="mb-8 flex items-center gap-4 border-b border-neutral-200 pb-12 dark:border-neutral-800">
+        <MotionDiv variants={itemVariants} className="mb-8 flex items-center gap-4 border-b border-neutral-200 pb-12 dark:border-neutral-800">
           {project.live && (
             <a
               href={project.live}
@@ -101,10 +109,10 @@ export default function ProjectContent({ project }: PageProps) {
               />
             </a>
           )}
-        </div>
+        </MotionDiv>
 
         {/* 5. MDX CONTENT */}
-        <div className="prose prose-neutral dark:prose-invert prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-12 max-w-none border-b border-dashed border-neutral-200 pb-12 dark:border-neutral-800">
+        <MotionDiv variants={itemVariants} className="prose prose-neutral dark:prose-invert prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-12 max-w-none border-b border-dashed border-neutral-200 pb-12 dark:border-neutral-800">
           <MDXRemote
             source={project.content}
             components={ProjectComponents}
@@ -122,8 +130,8 @@ export default function ProjectContent({ project }: PageProps) {
               },
             }}
           />
-        </div>
-      </div>
+        </MotionDiv>
+      </MotionDiv>
     </>
   );
 }
