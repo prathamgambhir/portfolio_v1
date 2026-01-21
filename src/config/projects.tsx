@@ -13,8 +13,10 @@ export const projects: {
   {
     title: "Schedulify",
     href: "schedulify",
-    description: "Structured learning journeys created by AI.",
-    image: "/projects/schedulify.png", // Replace with your path
+    description: `Schedulify is a full-stack scheduling project, 
+    It removes the back-and-forth of scheduling meetings by allowing users 
+    to share a booking link that automatically syncs with their calendar and generates meeting links.`,
+    image: "/projects/schedulify.png",
     techstack: [
       { name: "Next.js", icon: "nextjs.svg" },
       { name: "TypeScript", icon: "typescript.svg" },
@@ -34,7 +36,7 @@ export const projects: {
     title: "TaskFlow AI",
     href: "taskflowai",
     description:
-    "Landing Page for TaskFloww, an AI-powered task management solution for modern teams",
+      "Landing Page for TaskFloww, an AI-powered task management solution for modern teams",
     image: "/projects/taskflowwai.png",
     techstack: [
       { name: "Next.js", icon: "nextjs.svg" },
@@ -49,15 +51,20 @@ export const projects: {
   {
     title: "X Clone",
     href: "xclone",
-    description: "Project Management app with clean UI.",
-    image: "/imageProject.png",
+    description: `Project Management app with clean UI.`,
+    image: "/projects/xclone.png",
     techstack: [
-      { name: "Next.js", icon: "nextjs.svg" },
-      { name: "Tailwind", icon: "tailwind.svg" },
-      { name: "Prisma", icon: "prisma.svg" },
+      { name: "React", icon: "react.svg" },
       { name: "TypeScript", icon: "typescript.svg" },
+      { name: "Redux", icon: "redux.svg" },
+      { name: "MongoDB", icon: "mongodb.svg" },
+      { name: "Express", icon: "express.svg" },
+      { name: "Postman", icon: "postman.svg" },
+      { name: "Tailwind", icon: "tailwind.svg" },
+      { name: "ShadCn", icon: "shadcn.svg" },
+      { name: "Zod", icon: "zod.svg" },
     ],
     github: "https://github.com/prathamgambhir/x-clone",
-    live: "https://paths-ai.vercel.app",
+    live: "/projects/xclone",
   },
 ];
