@@ -33,7 +33,7 @@
     @apply text-black font-semibold dark:text-neutral-200;
   }
   .about-skill-span{
-    @apply inline-flex h-6 items-center gap-1 font-semibold border border-dotted border-neutral-800 text-neutral-950 dark:border-neutral-200 px-2 rounded-md bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-100 
+    @apply inline-flex h-6 items-center gap-1 font-semibold border border-dashed border-neutral-800 text-neutral-950 dark:border-neutral-200 px-2 rounded-md bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-100 
   }
   .links-span{
     @apply max-h-8 border bg-neutral-50 dark:bg-neutral-900 border-black/20 inset-shadow-sm inset-shadow-black/15 dark:border-white/20 dark:inset-shadow-white/15 px-3 rounded-lg hover:opacity-70 transition-opacity
