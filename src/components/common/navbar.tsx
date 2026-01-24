@@ -27,12 +27,15 @@ const Navbar = () => {
             "dark:border-white/10 dark:bg-neutral-900/70 dark:backdrop-blur-md",
           )}
         >
-          <Avatar className="ml-4 size-13 rounded-lg border-2 border-neutral-700 shadow shadow-black/20 dark:border-neutral-300 dark:shadow-white/20"
-          onClick={() => router.push("/")}
-          >
-            <AvatarImage src="/avatar.jpeg" className="object-cover" />
-            <AvatarFallback>PG</AvatarFallback>
-          </Avatar>
+          <motion.div whileTap={{ scale: 0.85 }}>
+            <Avatar
+              className="ml-4 size-13 rounded-lg border-2 border-neutral-700 shadow shadow-black/20 dark:border-neutral-300 dark:shadow-white/20 cursor-pointer"
+              onClick={() => router.push("/")}
+            >
+              <AvatarImage src="/avatar.jpeg" className="object-cover" />
+              <AvatarFallback>PG</AvatarFallback>
+            </Avatar>
+          </motion.div>
 
           <div className="ml-auto flex items-center gap-4">
             <div className="hidden items-center md:flex">
@@ -86,7 +89,7 @@ const Navbar = () => {
                 },
               }}
               style={{
-                overflow: "hidden"
+                overflow: "hidden",
               }}
               className="absolute top-21 right-0 left-0 mx-0.5 flex flex-col items-center gap-1 rounded-b-xl border-y border-dashed border-black/10 bg-white/70 p-2 py-4 backdrop-blur-sm md:hidden dark:border-white/10 dark:bg-neutral-900/70 dark:backdrop-blur-md"
             >

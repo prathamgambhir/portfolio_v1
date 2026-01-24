@@ -150,7 +150,7 @@ export default function ContactForm() {
         )}
       </motion.div>
 
-      <motion.div variants={itemVars} className="pt-2">
+      <motion.div variants={itemVars} whileTap={{scale: 0.85}} className="pt-2">
         <Button
           disabled={submitting}
           type="submit"

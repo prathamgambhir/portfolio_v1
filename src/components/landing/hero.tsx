@@ -1,3 +1,5 @@
+"use client";
+
 import { MapPin } from "lucide-react";
 import Image from "next/image";
 import ProfileImage from "../../../public/profile.jpeg";
@@ -7,6 +9,8 @@ import Link from "next/link";
 import { socialLinks } from "@/config/hero";
 import {MotionDiv} from "../motion-div";
 import { containerVariants, itemVariants } from "@/lib/stagger-animate";
+import { DottedArrow } from "../svgs/dotted-arrow";
+
 
 export default function Hero() {
   return (
@@ -56,20 +60,24 @@ export default function Hero() {
           </MotionDiv>
 
           {/* pfp */}
-          <MotionDiv 
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }} // Subtle interaction
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            className="border border-black h-24 md:h-32 w-auto shadow-md rounded-3xl dark:border-neutral-200 dark:shadow-neutral-700 overflow-hidden"
-          >
-            <Image
-              src={ProfileImage}
-              alt="pfp"
-              width={100}
-              height={100}
-              className="size-24 md:size-32 rounded-3xl object-cover object-center"
-            />
-          </MotionDiv>
+          {/* <div className="relative"> Wrap pfp in a relative div */}
+            {/* <DottedArrow /> The Animated Arrow */}
+            
+            <MotionDiv 
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="border border-black h-24 md:h-32 w-auto shadow-md rounded-3xl dark:border-neutral-200 dark:shadow-neutral-700 overflow-hidden"
+            >
+              <Image
+                src={ProfileImage}
+                alt="pfp"
+                width={100}
+                height={100}
+                className="size-24 md:size-32 rounded-3xl object-cover object-center"
+              />
+            </MotionDiv>
+          {/* </div> */}
         </div>
 
         {/* about */}

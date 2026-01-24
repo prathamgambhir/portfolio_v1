@@ -5,7 +5,7 @@ import rehypeHighlight from "@shikijs/rehype"; // Ensure you have this installed
 import { ArrowUpRightFromSquare, PlayCircleIcon } from "lucide-react";
 import { Project } from "@/types/project";
 import ProjectVideo from "./project-video";
-import { MotionDiv } from "../motion-div";
+import { MotionDiv, MotionLink } from "../motion-div";
 import { containerVariants, itemVariants } from "@/lib/stagger-animate";
 
 interface PageProps {
@@ -19,7 +19,7 @@ export default function ProjectContent({ project }: PageProps) {
         variants={containerVariants}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-100px"}}
         className="font-poppins mx-auto max-w-4xl px-6 py-12"
       >
         {/* 1. VIDEO */}
@@ -54,7 +54,7 @@ export default function ProjectContent({ project }: PageProps) {
         </div>
 
         {/* 3. METADATA GRID */}
-        <MotionDiv variants={itemVariants} className="zinc-box mb-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <MotionDiv variants={itemVariants} className="zinc-box hover:scale-100 mb-8 grid grid-cols-2 gap-4 md:grid-cols-4 hover:bg-zinc-50 hover:dark:bg-zinc-900 transition-all duration-300">
           <div>
             <h4 className="text-muted-foreground text-xs font-bold uppercase">
               Timeline
@@ -82,19 +82,21 @@ export default function ProjectContent({ project }: PageProps) {
         </MotionDiv>
 
         {/* 4. ACTION BUTTONS */}
-        <MotionDiv variants={itemVariants} className="mb-8 flex items-center gap-4 border-b border-neutral-200 pb-12 dark:border-neutral-800">
+        <MotionDiv variants={itemVariants} className="mb-8 flex items-center gap-4 border-b border-neutral-200 pb-12 dark:border-neutral-800 transition-all duration-300">
           {project.live && (
-            <a
+            <MotionLink
+              whileTap={{scale: 0.85}}
               href={project.live}
               target="_blank"
               className="about-skill-span inline-flex h-10 items-center justify-center gap-2 px-4 text-sm font-medium transition-colors"
             >
               Live Demo
               <ArrowUpRightFromSquare className="size-4" />
-            </a>
+            </MotionLink>
           )}
           {project.github && (
-            <a
+            <MotionLink
+              whileTap={{scale: 0.85}}
               href={project.github}
               target="_blank"
               className="zinc-box inline-flex h-10 items-center justify-center gap-2 px-3 text-sm font-medium transition-colors"
@@ -107,7 +109,7 @@ export default function ProjectContent({ project }: PageProps) {
                 height={20}
                 className="size-5 rounded-full dark:bg-neutral-100"
               />
-            </a>
+            </MotionLink>
           )}
         </MotionDiv>
 

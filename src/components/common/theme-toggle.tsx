@@ -22,7 +22,7 @@ export const ThemeToggle = () => {
     <Button
       variant="ghost"
       size="icon"
-      className="border border-black/20 rounded-full inset-shadow-sm inset-shadow-black/10 dark:border-white/10 dark:inset-shadow-white/10"
+      className="border border-black/20 rounded-full inset-shadow-sm inset-shadow-black/10 dark:border-white/10 dark:inset-shadow-white/10 cursor-pointer"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? (

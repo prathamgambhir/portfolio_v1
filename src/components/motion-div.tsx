@@ -52,4 +52,18 @@ export const MotionP: React.FC<MotionParagraphWrapperProps> = ({
   );
 };
 
-export default {MotionDiv, MotionSpan, MotionP};
+interface MotionLinkhWrapperProps extends MotionProps {
+  children: React.ReactNode;
+  href: string;
+  target?: string;
+  className?: string; // Optional className for styling
+}
+export const MotionLink: React.FC<MotionLinkhWrapperProps> = ({ children, className, href, target, ...props }) => {
+  return (
+    <motion.a className={className} href={href} target={target} {...props}>
+      {children}
+    </motion.a>
+  );
+};
+
+export default {MotionDiv, MotionSpan, MotionP, MotionLink};
