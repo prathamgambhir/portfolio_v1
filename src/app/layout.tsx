@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Space_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/common/theme-provider";
-import Navbar from "@/components/common/navbar";
-import Footer from "@/components/common/footer";
 import { Toaster } from "sonner";
 
 // const geistSans = Geist({
@@ -46,9 +44,7 @@ export default function RootLayout({
         className={`antialiased`} //${geistSans.variable} ${geistMono.variable} 
       >
         <ThemeProvider>
-          <Navbar />          
           {children}
-          <Footer />
           <Toaster position="bottom-right" />
         </ThemeProvider>
       </body>
