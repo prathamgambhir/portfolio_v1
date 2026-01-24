@@ -24,7 +24,7 @@ export const ProjectComponents = {
   // --- TYPOGRAPHY ---
   h1: ({ children, ...props }: any) => (
     <h1
-      className="animate-item-in mb-4 max-w-3xl text-5xl leading-snug font-bold tracking-tight text-zinc-900 dark:text-zinc-50"
+      className="animate-item-in mb-4 max-w-3xl text-3xl md:text-5xl leading-snug font-bold tracking-tight text-zinc-900 dark:text-zinc-50"
       {...props}
     >
       {children}

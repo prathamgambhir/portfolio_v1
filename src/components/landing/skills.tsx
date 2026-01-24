@@ -39,7 +39,7 @@ export default function Skills() {
         className="relative flex flex-wrap gap-2"
       >
         <MotionDiv
-          className="absolute -top-22 md:-top-24 right-2 md:right-6 flex  items-center "
+          className="hidden md:flex absolute -top-22 md:-top-24 right-2 md:right-6 items-center "
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}

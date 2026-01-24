@@ -25,7 +25,7 @@ export default function Hero() {
             <div className="text-xs font-medium text-neutral-500 pl-1 flex gap-6 items-center">
               Hey, I am
             </div>
-            <div className="text-3xl md:text-4xl font-bold flex gap-4 tracking-tighter">
+            <div className="text-xl md:text-4xl font-bold flex gap-4 tracking-tighter">
               Pratham Gambhir
               <button
                 className={cn(
@@ -41,7 +41,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-2 text-sm lg:text-md font-medium text-neutral-800 dark:text-neutral-400">
               <MapPin className="size-4" /> Delhi, India{" "}
-              <span>
+              <span className="hidden md:flex">
                 <LiveClock />
               </span>
             </div>
@@ -81,8 +81,8 @@ export default function Hero() {
         </div>
 
         {/* about */}
-        <MotionDiv variants={itemVariants} className="pt-6 md:pt-8 text-sm/80 md:text-sm text-neutral-700 dark:text-neutral-400">
-          <p className="tracking-tighter leading-7">
+        <MotionDiv variants={itemVariants} className="pt-6 md:pt-8 text-xs md:text-sm text-neutral-700 dark:text-neutral-400">
+          <p className="tracking-tighter leading-6 md:leading-7">
             Yeah! I'm a{" "}
             <span className="about-text-span">Full Stack Developer</span>. Sounds
             fancy, right? But here's the actual part-- I enjoy building things
@@ -141,7 +141,7 @@ export default function Hero() {
                     index === 0 ? "size-3.5" : ""
                   )}
                 />
-                {link.label && <span>{link.label}</span>}
+                {link.label && <span className="hidden md:flex">{link.label}</span>}
               </Link>
               {index === 0 && <span className="text-muted-foreground mx-1">OR</span>}
               {index === 1 && <span className="text-muted-foreground mx-1">|</span>}

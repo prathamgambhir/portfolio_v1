@@ -66,7 +66,7 @@ export default function Experience() {
 
                 {/* right box */}
                 <div className="flex items-center gap-4 md:gap-8">
-                  <div className="flex flex-col text-xs tracking-tighter">
+                  <div className="hidden md:flex flex-col text-xs tracking-tighter">
                     <div className="max-w-30 text-right text-sm font-medium text-neutral-900 dark:text-neutral-100">
                       {experience.start}{" "}
                       {experience.end ? `— ${experience.end}` : ""}
