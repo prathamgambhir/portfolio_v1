@@ -37,7 +37,7 @@ export const projects: {
     href: "taskflowai",
     description:
       "Landing Page for TaskFloww, an AI-powered task management solution for modern teams",
-    image: "/projects/taskflowwai.png",
+    image: "/projects/taskflowai.png",
     techstack: [
       { name: "Next.js", icon: "nextjs.svg" },
       { name: "TypeScript", icon: "typescript.svg" },
