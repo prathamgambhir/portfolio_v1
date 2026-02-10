@@ -1,5 +1,6 @@
 import Navbar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
+import LenisProvider from "@/components/common/lenis-provider";
 
 export default function MainLayout({
   children,
@@ -8,10 +9,11 @@ export default function MainLayout({
 }>) {
   return (
     <>
-      <Navbar />
-      {children}
-      <Footer />
+      <LenisProvider>
+        <Navbar />
+        {children}
+        <Footer />
+      </LenisProvider>
     </>
   );
 }
-

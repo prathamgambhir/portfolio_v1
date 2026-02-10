@@ -31,7 +31,7 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://prathamgambhir.vercel.app"),
   title: {
-    default: "Pratham Gambhir | Full-Stack Developer & Software Engineer",
+    default: "Pratham Gambhir | Software Engineer",
     template: "%s | Pratham Gambhir",
   },
   description: "Pratham Gambhir is a full-stack developer and software engineer specializing in React, Next.js, TypeScript, Node.js, and modern web technologies. View my portfolio, projects, skills, and experience.",
