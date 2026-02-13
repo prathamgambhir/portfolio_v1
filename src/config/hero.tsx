@@ -2,7 +2,7 @@ export const socialLinks: {
   href: string;
   label?: string;
   icon: string;
-  type: "primary" | "social";
+  type: "primary" | "social" | "resume";
 }[] = [
   {
     href: "https://x.com/_PrathamGambhir",
@@ -26,5 +26,5 @@ export const socialLinks: {
     icon: "linkedin.svg",
     type: "social",
   },
-  { href: "https://drive.google.com/file/d/1RVujv_PCP-tyE9zIX7tVlUASg6A-Jw-c/view", icon: "resume.svg", type: "social" },
+  { href: "https://drive.google.com/file/d/1ciX17ybuTe0uWICnyu9lDkQIKA9MNUOx/view", icon: "resume.svg", type: "resume" },
 ];
