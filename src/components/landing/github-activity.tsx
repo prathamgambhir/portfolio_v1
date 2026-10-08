@@ -28,7 +28,7 @@ export default function GithubActivity() {
         <div className="flex items-center justify-center">
           <GitHubCalendar
             username="prathamgambhir"
-            year={date.getFullYear()}
+            // year={date.getFullYear()}
             theme={{
               light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
               dark: ["#383838", "#606060", "#8c8c8c", "#bababa", "#ebebeb"], // Standard GH Dark Green

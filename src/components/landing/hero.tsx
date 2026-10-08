@@ -29,7 +29,7 @@ export default function Hero() {
               Pratham Gambhir
               <button
                 className={cn(
-                  "hidden md:flex text-[10px]/tight h-5 tracking-normal font-medium self-end md:px-2 items-center md:gap-1 button-inset"
+                  "hidden md:flex text-[10px]/tight h-5 tracking-normal font-medium self-end md:px-2 items-center md:gap-1 button-inset mb-2"
                 )}
               >
                 <span className="relative flex size-2 items-center justify-center">
@@ -69,13 +69,13 @@ export default function Hero() {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
               className="border border-black h-24 md:h-32 w-auto shadow-md rounded-3xl dark:border-neutral-200 dark:shadow-neutral-700 overflow-hidden"
             >
-              <Image
+              {/* <Image
                 src={ProfileImage}
                 alt="pfp"
                 width={100}
                 height={100}
                 className="size-24 md:size-32 rounded-3xl object-cover object-center"
-              />
+              /> */}
             </MotionDiv>
           {/* </div> */}
         </div>
