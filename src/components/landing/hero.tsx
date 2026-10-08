@@ -29,7 +29,7 @@ export default function Hero() {
               Pratham Gambhir
               <button
                 className={cn(
-                  "hidden md:flex text-[10px]/tight h-5 tracking-normal font-medium self-end md:px-2 items-center md:gap-1 button-inset mb-2"
+                  "hidden md:flex text-[10px]/tight h-5 tracking-normal font-medium self-end md:px-2 items-center md:gap-1 button-inset "
                 )}
               >
                 <span className="relative flex size-2 items-center justify-center">
@@ -63,12 +63,12 @@ export default function Hero() {
           {/* <div className="relative"> Wrap pfp in a relative div */}
             {/* <DottedArrow /> The Animated Arrow */}
             
-            <MotionDiv 
+            {/* <MotionDiv 
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
               className="border border-black h-24 md:h-32 w-auto shadow-md rounded-3xl dark:border-neutral-200 dark:shadow-neutral-700 overflow-hidden"
-            >
+            > */}
               {/* <Image
                 src={ProfileImage}
                 alt="pfp"
@@ -76,7 +76,7 @@ export default function Hero() {
                 height={100}
                 className="size-24 md:size-32 rounded-3xl object-cover object-center"
               /> */}
-            </MotionDiv>
+            {/* </MotionDiv> */}
           {/* </div> */}
         </div>
 
