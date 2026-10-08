@@ -4,7 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import { buttonVariants } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Home } from "lucide-react";
 
 export default function GlobalNotFound() {

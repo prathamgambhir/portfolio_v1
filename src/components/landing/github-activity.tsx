@@ -4,7 +4,7 @@ import { GitHubCalendar } from "react-github-calendar";
 import DottedTitle from "../common/dotted-tittle";
 import { useTheme } from "next-themes";
 import { MotionDiv } from "../motion-div";
-import { easeOut } from "framer-motion"; // Note: ensure you import from framer-motion or your specific lib
+import { easeOut } from "motion/react"; // Note: ensure you import from framer-motion or your specific lib
 
 export default function GithubActivity() {
   const { theme } = useTheme();

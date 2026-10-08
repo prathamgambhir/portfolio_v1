@@ -6,7 +6,7 @@ import GreenPing from "../common/green-ping";
 import { ChevronDown } from "lucide-react";
 import { experienceData } from "@/config/experience";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import {MotionDiv} from "../motion-div";
 
 export default function Experience() {
