@@ -1,8 +1,8 @@
-import { CopyrightIcon, Eye, Heart } from "lucide-react";
+import { CopyrightIcon, Heart } from "lucide-react";
 import Container from "./container";
 import { MotionDiv, MotionSpan } from "../motion-div";
 import { containerVariants, itemVariants } from "@/lib/stagger-animate";
-import { motion } from "motion/react";
+import VisitorCounterProvider from "./VisitorCounter-provider";
 
 export default function Footer() {
   return (
@@ -57,22 +57,7 @@ export default function Footer() {
           variants={itemVariants}
           className="flex w-full justify-center"
         >
-          <div className="group flex items-center gap-3 rounded-2xl border border-neutral-200 bg-neutral-100 px-5 py-2.5 transition-colors hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700">
-            <MotionDiv
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            >
-              <Eye className="size-5 text-neutral-500 transition-colors group-hover:text-neutral-700 dark:group-hover:text-neutral-300" />
-            </MotionDiv>
-            <div className="text-sm font-medium text-neutral-600 md:text-base dark:text-neutral-400">
-              You are the{" "}
-              <span className="font-bold text-neutral-900 tabular-nums dark:text-neutral-100">
-                {Math.floor(Math.random() * 1000)}
-                <sup>th</sup>
-              </span>{" "}
-              visitor
-            </div>
-          </div>
+          <VisitorCounterProvider />
         </MotionDiv>
 
         {/* Rights */}
