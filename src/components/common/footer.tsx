@@ -2,7 +2,7 @@ import { CopyrightIcon, Heart } from "lucide-react";
 import Container from "./container";
 import { MotionDiv, MotionSpan } from "../motion-div";
 import { containerVariants, itemVariants } from "@/lib/stagger-animate";
-import VisitorCounterProvider from "./VisitorCounter-provider";
+import VisitorCounterProvider from "./visitCount-provider";
 
 export default function Footer() {
   return (
