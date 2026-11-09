@@ -2,13 +2,11 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-
 :root {
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
   --pattern-fg: var(--color-neutral-400);
   --pattern-fg-dark: var(--color-neutral-300);
-  
 }
 
 @theme inline {
@@ -19,87 +17,86 @@
   --font-poppins: var(--font-poppins);
 }
 
-@layer components{
-  .availability-ping{
-    @apply animate-ping absolute inset-0 rounded-full bg-green-300 opacity-75;
+@layer components {
+  .availability-ping {
+    @apply absolute inset-0 animate-ping rounded-full bg-green-300 opacity-75;
   }
   .availability-pulse {
-    @apply animate-pulse absolute rounded-full size-2 bg-green-400;
+    @apply absolute size-2 animate-pulse rounded-full bg-green-400;
   }
-  .button-inset{
-    @apply border border-black/20 rounded-full inset-shadow-sm inset-shadow-black/5 dark:border-white/10 dark:inset-shadow-white/10
+  .button-inset {
+    @apply rounded-full border border-black/20 inset-shadow-sm inset-shadow-black/5 dark:border-white/10 dark:inset-shadow-white/10;
   }
-  .about-text-span{
-    @apply text-black font-semibold dark:text-neutral-200;
+  .about-text-span {
+    @apply font-semibold text-black dark:text-neutral-200;
   }
-  .about-skill-span{
-    @apply inline-flex h-6 items-center gap-1 font-semibold border border-dashed border-neutral-800 text-neutral-950 dark:border-neutral-200 px-2 rounded-md bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 hover:dark:bg-neutral-800 hover:dark:text-neutral-50 hover:opacity-70 transition-all hover:scale-105 duration-300
+  .about-skill-span {
+    @apply inline-flex h-6 items-center gap-1 rounded-md border border-dashed border-neutral-800 bg-neutral-50 px-2 font-semibold text-neutral-950 transition-all duration-300 hover:scale-105 hover:bg-neutral-100 hover:opacity-70 dark:border-neutral-200 dark:bg-neutral-900 dark:text-neutral-100 hover:dark:bg-neutral-800 hover:dark:text-neutral-50;
   }
-  .links-span{
-    @apply max-h-8 border bg-neutral-50 dark:bg-neutral-900 border-black/20 inset-shadow-sm inset-shadow-black/15 dark:border-white/20 dark:inset-shadow-white/15 px-3 rounded-lg hover:opacity-70 transition-opacity
+  .links-span {
+    @apply max-h-8 rounded-lg border border-black/20 bg-neutral-50 px-3 inset-shadow-sm inset-shadow-black/15 transition-opacity hover:opacity-70 dark:border-white/20 dark:bg-neutral-900 dark:inset-shadow-white/15;
   }
-  .section-seprate{
-    @apply border-b border-dashed border-neutral-300 dark:border-neutral-700
+  .section-seprate {
+    @apply border-b border-dashed border-neutral-300 dark:border-neutral-700;
   }
-  .green-bg{
-    @apply  text-emerald-600 dark:text-emerald-500/80 bg-emerald-50 dark:bg-emerald-500/5 w-fit px-2 py-1 rounded-full border border-emerald-200/50 dark:border-emerald-500/10
+  .green-bg {
+    @apply w-fit rounded-full border border-emerald-200/50 bg-emerald-50 px-2 py-1 text-emerald-600 dark:border-emerald-500/10 dark:bg-emerald-500/5 dark:text-emerald-500/80;
   }
   .card-title {
     /* Base: Light Mode (using neutral shades) */
     /* Dark: Dark Mode (neutral-900/950) */
-    @apply relative inline-block px-3 py-1 text-sm font-medium text-center transition-colors duration-200;
-    @apply bg-neutral-100 text-neutral-700 border border-neutral-200 rounded-sm shadow-sm;
-    @apply dark:bg-neutral-900 dark:text-neutral-300 dark:border-neutral-800 dark:shadow-[0_4px_24px_-8px_rgba(0,0,0,0.6)];
+    @apply relative inline-block px-3 py-1 text-center text-sm font-medium transition-colors duration-200;
+    @apply rounded-sm border border-neutral-200 bg-neutral-100 text-neutral-700 shadow-sm;
+    @apply dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 dark:shadow-[0_4px_24px_-8px_rgba(0,0,0,0.6)];
   }
 
   /* Base corner class */
   .corner {
-    @apply absolute w-2 h-2;
+    @apply absolute h-2 w-2;
   }
 
   /* Top Left */
   .corner-tl {
-    @apply top-0 left-0 border-t-2 border-l-2 rounded-tl-xs;
+    @apply top-0 left-0 rounded-tl-xs border-t-2 border-l-2;
     @apply border-neutral-400 dark:border-neutral-600;
   }
 
   /* Top Right */
   .corner-tr {
-    @apply top-0 right-0 border-t-2 border-r-2 rounded-tr-xs;
+    @apply top-0 right-0 rounded-tr-xs border-t-2 border-r-2;
     @apply border-neutral-400 dark:border-neutral-600;
   }
 
   /* Bottom Left */
   .corner-bl {
-    @apply bottom-0 left-0 border-b-2 border-l-2 rounded-bl-xs;
+    @apply bottom-0 left-0 rounded-bl-xs border-b-2 border-l-2;
     @apply border-neutral-400 dark:border-neutral-600;
   }
 
   /* Bottom Right */
   .corner-br {
-    @apply bottom-0 right-0 border-b-2 border-r-2 rounded-br-xs;
+    @apply right-0 bottom-0 rounded-br-xs border-r-2 border-b-2;
     @apply border-neutral-400 dark:border-neutral-600;
   }
 
-  .contact-form-div{
-    @apply flex flex-col gap-2 justify-start
-  }
-  
-  .contact-form-label{
-    @apply text-sm font-medium text-neutral-800 dark:text-neutral-100 px-1 after:content-[":"]
+  .contact-form-div {
+    @apply flex flex-col justify-start gap-2;
   }
 
-  .contact-form-input{
-    @apply text-sm border border-neutral-300 px-2 rounded-md h-10 focus:ring focus:ring-neutral-300 outline-none
+  .contact-form-label {
+    @apply px-1 text-sm font-medium text-neutral-800 after:content-[":"] dark:text-neutral-100;
   }
 
-  .zinc-box{
-    @apply rounded-md border border-neutral-100 inset-shadow-sm shadow-neutral-400 dark:shadow-neutral-600 dark:border-neutral-800 bg-zinc-50/50 p-5 dark:bg-zinc-900/50 hover:bg-zinc-50 hover:dark:bg-zinc-900 hover:scale-105 transition-all duration-300
+  .contact-form-input {
+    @apply h-10 rounded-md border border-neutral-300 px-2 text-sm outline-none focus:ring focus:ring-neutral-300;
+  }
+
+  .zinc-box {
+    @apply rounded-md border border-neutral-100 bg-zinc-50/50 p-5 inset-shadow-sm shadow-neutral-400 transition-all duration-300 hover:scale-105 hover:bg-zinc-50 dark:border-neutral-800 dark:bg-zinc-900/50 dark:shadow-neutral-600 hover:dark:bg-zinc-900;
   }
 }
 
-@theme{
-  
+@theme {
   @keyframes fadeInUpBlur {
     from {
       opacity: 0;
@@ -112,9 +109,8 @@
       filter: blur(0px);
     }
   }
-  
-  --animate-item-in : fadeInUpBlur 0.5s ease-out forwards;
 
+  --animate-item-in: fadeInUpBlur 0.5s ease-out forwards;
 }
 
 .dark {
@@ -137,7 +133,7 @@
 
   /* Use this instead of a media query - the component theme can be set */
   /* independent of the system color scheme. */
-  &[data-color-scheme='dark'] {
+  &[data-color-scheme="dark"] {
     background-color: hsl(0 0% 94%);
     color: hsl(0 0% 6%);
 
@@ -158,4 +154,53 @@ body {
   background: var(--background);
   color: var(--foreground);
   /* font-family: space-mono, sans-serif, poppins; */
+}
+
+::selection {
+  color: var(--color-neutral-800);
+  background-color: var(--color-neutral-200);
+}
+
+.dark ::selection {
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-100);
+}
+
+/* Keep rich MDX content inside the reading column, even for long URLs or code. */
+.blog-prose {
+  overflow-wrap: anywhere;
+}
+
+.blog-prose pre {
+  overflow-wrap: normal;
+}
+
+/* Shiki emits both token palettes; select the one matching next-themes' class. */
+.code-block .shiki,
+.code-block .shiki span,
+.code-block code span[style*="--shiki-dark"] {
+  color: var(--shiki-light) !important;
+  background-color: transparent !important;
+  font-style: var(--shiki-light-font-style) !important;
+  font-weight: var(--shiki-light-font-weight) !important;
+}
+
+.dark .code-block .shiki,
+.dark .code-block .shiki span,
+.dark .code-block code span[style*="--shiki-dark"] {
+  color: var(--shiki-dark) !important;
+  background-color: transparent !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

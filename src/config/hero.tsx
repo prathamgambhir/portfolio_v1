@@ -26,5 +26,5 @@ export const socialLinks: {
     icon: "linkedin.svg",
     type: "social",
   },
-  { href: "https://drive.google.com/file/d/1ciX17ybuTe0uWICnyu9lDkQIKA9MNUOx/view", icon: "resume.svg", type: "resume" },
+  { href: "https://drive.google.com/file/d/1BHjdEKSYfc2FxHZv7iOEoWySlT5yNG48/view?usp=sharing", icon: "resume.svg", type: "resume" },
 ];

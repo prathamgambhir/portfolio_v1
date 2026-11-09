@@ -41,7 +41,7 @@ export default function Footer() {
             </svg>
           </MotionSpan>
 
-          <div className="relative z-10 flex flex-col gap-4 tracking-tight selection:bg-neutral-300">
+          <div className="relative z-10 flex flex-col gap-4 tracking-tight">
             <div className="text-center text-sm font-medium text-neutral-800 italic md:text-lg md:leading-relaxed dark:text-neutral-400">
               "Man is made by his belief. As he believes,
               <br /> so he is."
