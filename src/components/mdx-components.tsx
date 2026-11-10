@@ -1,127 +1,124 @@
-import Image from "next/image";
 import React from "react";
+import MdxImage from "@/components/blogs/mdx-image";
+import { CodeBlock } from "@/components/ui/code-block";
 
-export const ProjectComponents = {
-  // --- MEDIA ---
-  img: ({ src, alt, ...props }: any) => (
-    <div className="animate-item-in my-8">
-      <Image
-        src={src}
-        alt={alt}
-        width={800}
-        height={400}
-        className="rounded-lg border border-zinc-100 dark:border-zinc-800/50"
-        {...props}
-      />
-      {alt && (
-        <p className="mt-2 text-center text-[11px] font-medium tracking-tight text-zinc-400 uppercase">
-          {alt}
-        </p>
-      )}
-    </div>
+function getCodeText(node: React.ReactNode): string {
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(getCodeText).join("");
+  if (React.isValidElement<{ children?: React.ReactNode }>(node)) {
+    return getCodeText(node.props.children);
+  }
+  return "";
+}
+
+export const MdxComponents = {
+  img: ({ src, alt }: { src?: string; alt?: string }) => (
+    <MdxImage src={src} alt={alt} />
   ),
 
-  // --- TYPOGRAPHY ---
-  h1: ({ children, ...props }: any) => (
+  h1: ({ children, ...props }: React.ComponentProps<"h1">) => (
     <h1
-      className="animate-item-in mb-4 max-w-3xl text-3xl md:text-5xl leading-snug font-bold tracking-tight text-zinc-900 dark:text-zinc-50"
+      className="animate-item-in mt-2 mb-5 text-2xl leading-[1.15] font-semibold tracking-[-0.03em] text-neutral-900 md:text-3xl dark:text-neutral-50"
       {...props}
     >
       {children}
     </h1>
   ),
-  h2: ({ children, ...props }: any) => (
+  h2: ({ children, ...props }: React.ComponentProps<"h2">) => (
     <h2
-      className="animate-item-in mt-8 mb-3 text-xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100"
+      className="animate-item-in mt-10 mb-3 text-xl leading-snug font-semibold tracking-[-0.025em] text-neutral-900 md:text-2xl dark:text-neutral-100"
       {...props}
     >
       {children}
     </h2>
   ),
-  h3: ({ children, ...props }: any) => (
+  h3: ({ children, ...props }: React.ComponentProps<"h3">) => (
     <h3
-      className="animate-item-in mt-6 mb-2 text-lg font-medium text-zinc-800 dark:text-zinc-200"
+      className="animate-item-in mt-8 mb-2 text-lg leading-snug font-semibold tracking-tight text-neutral-800 dark:text-neutral-200"
       {...props}
     >
       {children}
     </h3>
   ),
-  p: ({ children, ...props }: any) => (
+  p: ({ children, ...props }: React.ComponentProps<"p">) => (
     <p
-      className="animate-item-in mb-4 leading-relaxed text-zinc-600 dark:text-zinc-400/90"
+      className="animate-item-in mb-5 text-sm leading-7 text-neutral-600 md:text-[15px] dark:text-neutral-400"
       {...props}
     >
       {children}
     </p>
   ),
-
-  // for strong text did with **
-  strong: ({ children, ...props }: any) => (
+  a: ({ children, href, ...props }: React.ComponentProps<"a">) => (
+    <a
+      href={href}
+      className="font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900 dark:text-neutral-100 dark:decoration-neutral-700 dark:hover:decoration-neutral-200"
+      {...props}
+    >
+      {children}
+    </a>
+  ),
+  strong: ({ children, ...props }: React.ComponentProps<"strong">) => (
     <strong
-      className="animate-item-in text-zinc-900 dark:text-zinc-50"
+      className="font-semibold text-neutral-900 dark:text-neutral-50"
       {...props}
     >
       {children}
     </strong>
   ),
+  em: ({ children, ...props }: React.ComponentProps<"em">) => (
+    <em className="text-neutral-700 italic dark:text-neutral-300" {...props}>
+      {children}
+    </em>
+  ),
 
-  // --- LISTS ---
-  ul: ({ children, ...props }: any) => (
-    <ul className="animate-item-in mb-4 ml-1 space-y-1.5" {...props}>
+  ul: ({ children, ...props }: React.ComponentProps<"ul">) => (
+    <ul
+      className="animate-item-in mb-6 ml-5 list-disc space-y-2 text-sm leading-7 text-neutral-600 md:text-[15px] dark:text-neutral-400"
+      {...props}
+    >
       {children}
     </ul>
   ),
-  ol: ({ children, ...props }: any) => (
+  ol: ({ children, ...props }: React.ComponentProps<"ol">) => (
     <ol
-      className="animate-item-in mb-4 ml-5 list-decimal space-y-1.5 text-zinc-600 dark:text-zinc-400"
+      className="animate-item-in mb-6 ml-5 list-decimal space-y-2 text-sm leading-7 text-neutral-600 md:text-[15px] dark:text-neutral-400"
       {...props}
     >
       {children}
     </ol>
   ),
-  li: ({ children, ...props }: any) => (
+  li: ({ children, ...props }: React.ComponentProps<"li">) => (
     <li
-      className="animate-item-initems-start flex gap-2.5 text-[0.95rem] leading-normal text-zinc-600 dark:text-zinc-400"
+      className="pl-1 marker:text-neutral-400 dark:marker:text-neutral-600"
       {...props}
     >
-      <span className="animate-item-in text-xl text-zinc-600 select-none dark:text-zinc-700">
-        •
-      </span>
-      <span className="animate-item-in my-0.5 flex-1">{children}</span>
+      {children}
     </li>
   ),
 
-  hr: ({ ...props }: any) => (
+  hr: ({ ...props }: React.ComponentProps<"hr">) => (
     <hr
-      className="animate-item-in my-8 border-zinc-100 dark:border-zinc-900"
+      className="my-12 border-dashed border-neutral-200 dark:border-neutral-800"
       {...props}
     />
   ),
 
-  // --- CODE BLOCKS ---
-  pre: ({ children, ...props }: any) => {
-    const getTextContent = (node: React.ReactNode): string => {
-      if (typeof node === "string") return node;
-      if (typeof node === "number") return String(node);
-      if (React.isValidElement(node) && node.props) {
-        return getTextContent((node.props as any).children);
-      }
-      if (Array.isArray(node)) return node.map(getTextContent).join("");
-      return "";
-    };
+  pre: ({ children }: React.ComponentProps<"pre">) => {
+    const codeElement = React.Children.toArray(children)[0];
+    const languageClass = React.isValidElement<{ className?: string }>(
+      codeElement,
+    )
+      ? codeElement.props.className
+      : undefined;
+    const language = languageClass?.match(/language-([^\s]+)/)?.[1];
 
     return (
-      <div className="group animate-item-in relative mb-6">
-        <pre
-          className="overflow-x-auto rounded-lg border border-zinc-100 bg-zinc-50/50 p-4 font-mono text-[13px] leading-6 dark:border-zinc-800/60 dark:bg-zinc-900/40"
-          {...props}
-        >
-          {children}
-        </pre>
-      </div>
+      <CodeBlock code={getCodeText(children)} language={language}>
+        {children}
+      </CodeBlock>
     );
   },
-  code: ({ children, className, ...props }: any) => {
+  code: ({ children, className, ...props }: React.ComponentProps<"code">) => {
     if (className?.includes("language-")) {
       return (
         <code className={className} {...props}>
@@ -129,9 +126,10 @@ export const ProjectComponents = {
         </code>
       );
     }
+
     return (
       <code
-        className="animate-item-in rounded border border-zinc-200/50 bg-zinc-100 px-1.5 py-0.5 font-mono text-[0.8rem] text-zinc-900 dark:border-zinc-700/30 dark:bg-zinc-800/50 dark:text-zinc-200"
+        className="rounded-md border border-neutral-200 bg-neutral-100 px-1.5 py-0.5 font-mono text-[0.8rem] text-neutral-800 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200"
         {...props}
       >
         {children}
@@ -139,13 +137,14 @@ export const ProjectComponents = {
     );
   },
 
-  // --- QUOTES ---
-  blockquote: ({ children, ...props }: any) => (
+  blockquote: ({ children, ...props }: React.ComponentProps<"blockquote">) => (
     <blockquote
-      className="animate-item-in my-6 border-l-[3px] border-zinc-200 py-0.5 pl-4 text-zinc-500 italic dark:border-zinc-800 dark:text-zinc-400"
+      className="animate-item-in my-7 border-l-2 border-neutral-300 py-0.5 pl-4 text-sm leading-7 text-neutral-500 italic md:text-[15px] dark:border-neutral-700 dark:text-neutral-400"
       {...props}
     >
       {children}
     </blockquote>
   ),
 };
+
+export const ProjectComponents = MdxComponents;
