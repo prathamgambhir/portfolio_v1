@@ -3,6 +3,7 @@ import { Space_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/common/theme-provider";
 import { Toaster } from "sonner";
+import { Analytics } from '@vercel/analytics/next';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -133,6 +134,7 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
           <Toaster position="bottom-right" />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
