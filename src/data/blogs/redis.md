@@ -1,18 +1,18 @@
 ---
 title: "What is Redis!?"
 description: "How i went from 'what even is Redis' to building a live visitor counter on my portfolio. the course that helped, what i learned, and the small project i built to practice."
-date: "2026-10-21"
+date: "2026-11-14"
 author: "Pratham"
 tags: ["Redis", "Upstash", "Next.js", "Server Actions", "Portfolio"]
 cover: "/blogs/redis/redis-cover.png"
-coverAlt: "A Redis visitor-counter illustration"
+coverAlt: " "
 ---
 
 # What is Redis ?
 
 Hey, in this article i'm going to talk about Redis.
 
-Not as a "complete guide", more like how i learned it, what i understood, and the small project i built to practice it.
+its is not a Guide or something like that, it is more like how i learned it, what i understood, and the small project i built to practice it.
 
 So this is the journey, in the order it actually happened.
 
